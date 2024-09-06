@@ -1,0 +1,77 @@
+@use "sass:map";
+
+$border: (
+  "px": 1px,
+  "xs": 0.0625rem,
+  "sm": 0.125rem,
+  "md": 0.1875rem,
+  "lg": 0.25rem,
+  "xl": 0.3125rem,
+);
+
+$breakpoint: (
+  "mobile": 680px,    // original: 375px
+  "tablet": 768px,    // original: 768px
+  "desktop": 1080px,  // original: 1440px
+);
+
+$icon: (
+  "2xs": 0.75rem,
+  "xs": 1rem,
+  "sm": 1.5rem,
+  "md": 2rem,
+  "lg": 2.5rem,
+  "xl": 3rem,
+  "2xl": 4.5rem,
+);
+
+$radius: (
+  "2xs": 0.25rem,
+  "xs": 0.5rem,
+  "sm": 0.75rem,
+  "md": 1rem, 
+);
+
+$spacing: (
+  "3xs": 0.125rem,
+  "2xs": 0.25rem,
+  "xs": 0.5rem,
+  "sm": 0.75rem,
+  "md": 1rem,
+  "lg": 1.25rem,
+  "xl": 1.5rem,
+  "2xl": 2rem,
+  "3xl": 3rem,
+);
+
+$text: (
+  "xs": 0.75rem,
+  "sm": 0.875rem,
+  "md": 1rem,
+  "lg": 1.125rem,
+  "xl": 1.5rem,
+);
+
+@function border($key) {
+  @return map.get($border, $key);
+};
+
+@function breakpoint($key) {
+  @return map.get($breakpoint, $key);
+};
+
+@function spacing($key) {
+  @return map.get($spacing, $key);
+};
+
+@function icon($key) {
+  @return map.get($icon, $key);
+};
+
+@function radius($key) {
+  @return map.get($radius, $key);
+};
+
+@function text($key) {
+  @return map.get($text, $key);
+};
