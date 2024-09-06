@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "sass:color";
+
+$brand: (
+  "primary":      hsl(241, 100%, 72%),      // #7572FF
+  "secondary":    hsl(184, 100%, 75%),      // #82F7FF
+);
+
+$danger: (
+  "primary":      hsl(0, 89%, 73%),         // #F87B7B
+  "accent":       hsl(0, 89%, 73%, 0.15),   // #F77D7D26
+);
+
+$framework: (
+  "background":   hsl(0, 0%, 100%),         // #FFFFFF
+  "border":       hsl(220, 19%, 85%),       // #D1D6E0
+  "border-alpha": hsl(0, 0%, 100%, 0.2),    // #FFFFFF33
+  "border-dark":  hsl(0, 0%, 0%),           // #000000
+  "card-fade":    hsl(254, 16%, 27%, 0.6),  // #3F3A5099
+  "dark":         hsl(254, 16%, 27%),       // #3F3A50
+  "dark-accent":  hsl(254, 23%, 18%),       // #282338
+  "light":        hsl(218, 38%, 97%),       // #F6F7FB
+  "shadow":       hsl(0, 0%, 0%, 0.15),     // #00000026
+);
+
+$text: (
+  "dark":         hsl(0, 0%, 0%),           // #000000
+  "disabled":     hsl(210, 8%, 66%),        // #A2A9AF
+  "mid":          hsl(210, 4%, 35%),        // #55595D
+  "light":        hsl(0, 0%, 100%),         // #FFFFFF
+);
+
+@function brand($key) {
+  @return map.get($brand, $key);
+};
+
+@function danger($key) {
+  @return map.get($danger, $key);
+};
+
+@function framework($key) {
+  @return map.get($framework, $key);
+};
+
+@function text($key) {
+  @return map.get($text, $key);
+};
