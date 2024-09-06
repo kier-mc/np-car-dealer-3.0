@@ -1,0 +1,13 @@
+@mixin button-focus($parent-border-width: #{0px}, $parent-border-radius: #{0rem}) {
+  --size: calc(var(--sz-border-md));
+
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: calc(#{$parent-border-radius} - #{$parent-border-width} + var(--size));
+  margin: calc(var(--size) * -1);
+  box-shadow: inset 0 0 0 var(--size) color-mix(in srgb, var(--cl-brand-primary), white 50%);
+  opacity: 0;
+  transition: opacity var(--tm-250) var(--ef-out-quart);
+};
