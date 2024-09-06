@@ -1,0 +1,88 @@
+@use "partials/colour";
+@use "partials/easing";
+@use "partials/time";
+@use "partials/size";
+
+@import "reset.scss";
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+};
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+};
+
+:root {
+    // Sizes    
+    @each $id, $size in size.$border {
+      --sz-border-#{$id}: #{$size};
+    };
+  
+    @each $id, $size in size.$icon {
+      --sz-icon-#{$id}: #{$size};
+    };
+  
+    @each $id, $size in size.$radius {
+      --sz-radius-#{$id}: #{$size};
+    };
+  
+    @each $id, $size in size.$spacing {
+      --sz-spacing-#{$id}: #{$size};
+    };
+  
+    @each $id, $size in size.$text {
+      --sz-text-#{$id}: #{$size};
+    };
+  
+    // Colours
+    @each $id, $colour in colour.$brand {
+      --cl-brand-#{$id}: #{$colour};
+    };
+  
+    @each $id, $colour in colour.$danger {
+      --cl-danger-#{$id}: #{$colour};
+    };
+
+    @each $id, $colour in colour.$framework {
+      --cl-fw-#{$id}: #{$colour};
+    };
+
+    @each $id, $colour in colour.$text {
+      --cl-text-#{$id}: #{$colour};
+    };
+
+    // Easing/timing functions
+
+    @each $id, $curve in easing.$in {
+      --ef-in-#{$id}: #{$curve};
+    };
+  
+    @each $id, $curve in easing.$in-out {
+      --ef-in-out-#{$id}: #{$curve};
+    };
+  
+    @each $id, $curve in easing.$out {
+      --ef-out-#{$id}: #{$curve};
+    };
+
+    // Timings
+    @each $id, $colour in time.$duration {
+      --tm-#{$id}: #{$colour};
+    };
+};
+
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--sz-spacing-md);
+
+  @media (prefers-reduced-motion) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--cl-fw-background);
+  color: var(--cl-text-dark);
+}
