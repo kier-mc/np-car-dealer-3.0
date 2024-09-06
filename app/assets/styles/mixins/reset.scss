@@ -1,0 +1,31 @@
+@mixin _defaults {
+  all: unset;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5em);
+}
+
+@mixin button {
+  @include _defaults();
+
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+@mixin heading {
+  @include _defaults();
+  display: block;
+}
+
+@mixin input {
+  @include _defaults();
+  display: block;
+  cursor: auto;
+  width: 100%;
+}
+
+@mixin select {
+  @include _defaults();
+  user-select: none;
+}
