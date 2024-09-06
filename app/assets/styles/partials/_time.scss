@@ -1,0 +1,18 @@
+@use "sass:map";
+
+$duration: (
+  "0": 0ms,
+  "75": 75ms,
+  "100": 100ms,
+  "125": 100ms,
+  "150": 150ms,
+  "200": 200ms,
+  "250": 250ms,
+  "500": 500ms,
+  "750": 750ms,
+  "1000": 1000ms,
+);
+
+@function duration($key) {
+  @return map.get($duration, $key);
+};
