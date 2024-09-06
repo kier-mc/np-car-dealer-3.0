@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.1",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.3.2",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
+    "eslint": "^9.9.1",
+    "eslint-plugin-format": "^0.1.2",
+    "sass": "^1.78.0"
+  }
+}
