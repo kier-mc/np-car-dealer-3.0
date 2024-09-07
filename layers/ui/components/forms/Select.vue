@@ -3,6 +3,8 @@ interface Props {
   selected?: string;
 };
 
+defineOptions({ inheritAttrs: false });
+
 const props = defineProps<Props>();
 
 const emit = defineEmits<{
@@ -19,7 +21,7 @@ const selected = computed({
 
 <template>
   <div class="select">
-    <select v-model="selected" class="select__element">
+    <select v-model="selected" class="select__element" v-bind="$attrs">
       <slot />
     </select>
     <UiIcon class="select__icon" icon="chevron-down-16-solid" />
