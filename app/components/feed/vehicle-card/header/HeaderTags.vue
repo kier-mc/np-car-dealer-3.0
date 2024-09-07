@@ -3,18 +3,39 @@ import type { Vehicle } from "~~/types/api";
 
 const data = inject("data") as Vehicle;
 
-const tags = computed(() => {
+interface Tag extends UseVueKey {
+  label: string;
+}
+
+const tags = computed((): Tag[] => {
   const { body_type, fuel_type, odometer_value, transmission } = data;
   const _mileage = Math.round(odometer_value / 1000) * 1000;
   const mileage = `${Math.round(_mileage) / 1000}k miles`;
-  return [mileage, fuel_type, transmission, body_type];
+  return [
+    {
+      _key: Symbol(),
+      label: mileage,
+    },
+    {
+      _key: Symbol(),
+      label: fuel_type,
+    },
+    {
+      _key: Symbol(),
+      label: transmission,
+    },
+    {
+      _key: Symbol(),
+      label: body_type,
+    },
+  ];
 });
 </script>
 
 <template>
   <div class="tags">
-    <FeedVehicleCardHeaderTagsTag v-for="tag in tags" :key="tag">
-      {{ tag }}
+    <FeedVehicleCardHeaderTagsTag v-for="tag in tags" :key="tag._key">
+      {{ tag.label }}
     </FeedVehicleCardHeaderTagsTag>
   </div>
 </template>
