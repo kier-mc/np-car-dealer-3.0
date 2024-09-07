@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineOptions({ inheritAttrs: false });
+</script>
 
 <template>
   <div class="field">
