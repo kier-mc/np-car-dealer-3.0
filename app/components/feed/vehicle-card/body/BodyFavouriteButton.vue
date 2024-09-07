@@ -35,14 +35,4 @@ function toggleFavourite() {
     opacity: 1;
   }
 }
-
-.v-enter-active,
-.v-leave-active {
-  transition: opacity var(--tm-150) var(--ef-out-quart);
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
 </style>
