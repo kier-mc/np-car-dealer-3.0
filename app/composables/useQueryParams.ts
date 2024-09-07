@@ -1,5 +1,5 @@
-import type { AdvertClassification } from "~~/types/api";
 import { QUERY_PARAMS } from "~~/utils/api";
+import type { AdvertClassification } from "~~/types/api";
 
 export default function () {
   const query = useState("query-params", () => QUERY_PARAMS);
