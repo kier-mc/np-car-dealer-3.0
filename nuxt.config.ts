@@ -28,6 +28,7 @@ export default defineNuxtConfig({
           href: "https://rsms.me/inter/inter.css",
         },
       ],
+      title: "Nexus Point Front End Tech Test",
     },
   },
   compatibilityDate: "2024-04-03",
