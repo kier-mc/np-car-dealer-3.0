@@ -7,7 +7,7 @@ function toggleFavourite() {
 </script>
 
 <template>
-  <button class="button" type="button" @click="toggleFavourite()">
+  <button class="button" type="button" aria-label="add to favourites" @click="toggleFavourite()">
     <UiTransitionFade mode="out-in">
       <UiIcon v-if="isFavourite" colour="var(--cl-brand-primary)" icon="star-20-solid" />
       <UiIcon v-else icon="star" />
