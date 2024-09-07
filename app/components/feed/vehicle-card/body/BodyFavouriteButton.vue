@@ -8,10 +8,10 @@ function toggleFavourite() {
 
 <template>
   <button class="button" type="button" @click="toggleFavourite()">
-    <Transition mode="out-in">
+    <UiTransitionFade mode="out-in">
       <UiIcon v-if="isFavourite" colour="var(--cl-brand-primary)" icon="star-20-solid" />
       <UiIcon v-else icon="star" />
-    </Transition>
+    </UiTransitionFade>
   </button>
 </template>
 
