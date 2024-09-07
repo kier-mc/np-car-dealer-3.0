@@ -5,11 +5,11 @@ const { current, total, increment, decrement } = inject("gallery") as Gallery;
 </script>
 
 <template>
-  <div class="controls">
-    <UiButton variant="dark" :disabled="current === 0" @click="decrement()">
+  <div class="controls" aria-label="gallery navigation">
+    <UiButton variant="dark" :disabled="current === 0" aria-label="go to previous image" @click="decrement()">
       <UiIcon icon="chevron-left-16-solid" />
     </UiButton>
-    <UiButton variant="dark" :disabled="current + 1 === total" @click="increment()">
+    <UiButton variant="dark" :disabled="current + 1 === total" aria-label="go to next image" @click="increment()">
       <UiIcon icon="chevron-right-16-solid" />
     </UiButton>
   </div>
