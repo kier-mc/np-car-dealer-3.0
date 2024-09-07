@@ -29,7 +29,8 @@ export default function () {
   } as const;
 
   const results = computed(() => {
-    return data.value.toSorted(filters[activeFilter.value]);
+    const sorted = data.value.toSorted(filters[activeFilter.value]);
+    return sorted.map(result => ({ ...result, _key: Symbol() } as typeof result & UseVueKey));
   });
 
   return { activeFilter, filters, results, uiData };
