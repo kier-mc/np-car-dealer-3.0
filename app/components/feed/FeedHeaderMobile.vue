@@ -11,7 +11,7 @@
 <style scoped lang="scss">
 .header {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
   gap: var(--sz-spacing-sm);
 
